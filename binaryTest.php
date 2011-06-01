@@ -11,6 +11,10 @@ if (isset($_POST['reset'])) {
 }
 
 $hexNum = base_convert($memNum, 10, 16);
+if(strstr('abcdef', $hexNum)) {
+	$hexNum = ucfirst($hexNum);
+	}
+
 $decNum = base_convert($memNum, 10, 10);
 ?>
 
@@ -38,11 +42,11 @@ $binOut = $zeroString . $origBin;
 echo $binOut;
 
 echo "<br/><br/>";
-echo "<input type=\"button\" id=\"numCheck\" value=\"Check Dec\" onclick=\"showDec()\">";
+echo "<input type=\"button\" id=\"numCheck\" value=\"Show Dec\" onclick=\"showDec()\">";
 echo "<input type=\"text\" id=\"displayDec\">";
 
 echo "<br/>";
-echo "<input type=\"button\" id=\"numCheck\" value=\"Check Hex\" onclick=\"showHex()\">";
+echo "<input type=\"button\" id=\"numCheck\" value=\"Show Hex\" onclick=\"showHex()\">";
 echo "<input type=\"text\" id=\"displayHex\">";
 
 echo "<br/><br/>";
