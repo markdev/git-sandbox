@@ -11,6 +11,7 @@ if (isset($_POST['reset'])) {
 }
 
 $hexNum = base_convert($memNum, 10, 16);
+$decNum = base_convert($memNum, 10, 10);
 ?>
 
 <script>
