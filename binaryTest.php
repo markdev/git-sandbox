@@ -53,4 +53,5 @@ echo "<br/><br/>";
 echo "<form action=\"binaryTest.php\" method=\"POST\">";
 echo "<input type=\"submit\" name=\"reset\" value=\"New Number\">";
 echo "</form>";
+
 ?>
