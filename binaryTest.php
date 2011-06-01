@@ -9,12 +9,17 @@ if (isset($_POST['reset'])) {
 	$origNum = rand(0,15);
 	$memNum = $origNum;
 }
+
+$hexNum = base_convert($memNum, 10, 16);
 ?>
 
 <script>
-function showNum() {
-	var field = document.getElementById('numCheck').value;
-	field = "foo!!";
+function showDec() {
+document.getElementById('displayDec').value = "<?php echo $decNum; ?>";
+}
+
+function showHex() {
+document.getElementById('displayHex').value = "<?php echo $hexNum; ?>";
 }
 </script>
 
@@ -32,8 +37,12 @@ $binOut = $zeroString . $origBin;
 echo $binOut;
 
 echo "<br/><br/>";
-echo "<input type=\"button\" id=\"numCheck\" value=\"Check\" onclick=\"showNum()\">";
-echo "<input type=\"text\" name=\"display\">";
+echo "<input type=\"button\" id=\"numCheck\" value=\"Check Dec\" onclick=\"showDec()\">";
+echo "<input type=\"text\" id=\"displayDec\">";
+
+echo "<br/>";
+echo "<input type=\"button\" id=\"numCheck\" value=\"Check Hex\" onclick=\"showHex()\">";
+echo "<input type=\"text\" id=\"displayHex\">";
 
 echo "<br/><br/>";
 echo "<form action=\"binaryTest.php\" method=\"POST\">";
